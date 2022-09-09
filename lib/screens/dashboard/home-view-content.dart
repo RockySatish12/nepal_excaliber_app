@@ -25,12 +25,12 @@ class HomeViewContent extends StatelessWidget {
                 height: 24,
               ),
               CarouselSlider.builder(
-                itemCount: 3,
+                itemCount: c.bannerImages.length,
                 itemBuilder: (BuildContext context, int index, int pageIndex) {
                   return ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(
-                      "https://i.picsum.photos/id/660/200/300.jpg?hmac=j7s3I-0KukW6B1Vt4AJzCYxM8kbZz5kTMOEl9Y7zUOg",
+                      c.bannerImages[index],
                       fit: BoxFit.cover,
                     ),
                   );

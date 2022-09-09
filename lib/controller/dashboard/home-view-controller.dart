@@ -11,6 +11,10 @@ class HomeViewController extends GetxController {
   RxBool styleProductsLoading = false.obs;
   int featuredProductPage = 1;
   bool hasNextPageFeature = true;
+  RxList<String> bannerImages = RxList([
+    "https://res.cloudinary.com/du7pn6pke/image/upload/v1662703881/nepal%20excaliber/big-sale_pcj7hr.jpg",
+    "https://res.cloudinary.com/du7pn6pke/image/upload/v1662703553/nepal%20excaliber/ecommerce-banner_c7gzvg.jpg"
+  ]);
 
   RxInt styleSectionIndex = RxInt(0);
 

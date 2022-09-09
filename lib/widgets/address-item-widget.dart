@@ -37,11 +37,11 @@ class AddressItemWidget extends StatelessWidget {
             height: 8,
           ),
           Text(
-            "Satish Nepali",
+            "Anisha Thapa",
             style: theme.textTheme.bodyLarge,
           ),
           Text(
-            "9825135568",
+            "9812345670",
             style: theme.textTheme.bodyLarge,
           ),
           const SizedBox(

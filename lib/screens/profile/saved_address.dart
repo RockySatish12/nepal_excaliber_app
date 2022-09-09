@@ -19,7 +19,7 @@ class SavedAddressScreen extends StatelessWidget {
           const SizedBox(height: 6),
           ListView.builder(
             shrinkWrap: true,
-            itemCount: 2,
+            itemCount: 1,
             itemBuilder: (context, index) {
               return AddressItemWidget(theme: theme);
             },
