@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:nepal_excaliber/models/address.dart';
 
 import '../utils/colors.dart';
 
 class AddressItemWidget extends StatelessWidget {
+  final Address address;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
   const AddressItemWidget({
     Key? key,
     required this.theme,
+    required this.address,
+    required this.onEdit,
+    required this.onDelete,
   }) : super(key: key);
 
   final ThemeData theme;
@@ -23,12 +30,12 @@ class AddressItemWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(Icons.home),
+              const Icon(Icons.location_city_outlined),
               const SizedBox(
                 width: 9,
               ),
               Text(
-                "Home",
+                address.label!,
                 style: theme.textTheme.titleMedium,
               ),
             ],
@@ -37,18 +44,18 @@ class AddressItemWidget extends StatelessWidget {
             height: 8,
           ),
           Text(
-            "Anisha Thapa",
+            address.contactName!,
             style: theme.textTheme.bodyLarge,
           ),
           Text(
-            "9812345670",
+            address.contact!,
             style: theme.textTheme.bodyLarge,
           ),
           const SizedBox(
             height: 8,
           ),
           Text(
-            "Gandaki Province, Kaski, Pokhara, Lamachaur, Bhaktipath",
+            address.toString(),
             textAlign: TextAlign.justify,
             maxLines: 3,
             style: theme.textTheme.bodyMedium!
@@ -58,7 +65,7 @@ class AddressItemWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: TextButton.icon(
-                  onPressed: () {},
+                  onPressed: onEdit,
                   icon: const Icon(
                     Icons.edit_outlined,
                     color: AppColors.tertiaryColor,
@@ -73,7 +80,7 @@ class AddressItemWidget extends StatelessWidget {
               ),
               Expanded(
                 child: TextButton.icon(
-                  onPressed: () {},
+                  onPressed: onDelete,
                   icon: const Icon(
                     Icons.delete_outline,
                     color: AppColors.errorColor,

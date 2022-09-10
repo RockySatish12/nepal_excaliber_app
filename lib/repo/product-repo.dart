@@ -154,4 +154,31 @@ class ProductRepo {
       return [];
     }
   }
+
+  Future<List<Product>> searchProducts(
+      {required String categoryId, required String query}) async {
+    try {
+      var token = StorageHelper.getToken()!;
+      var headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "${token.type} ${token.token!}"
+      };
+      var url = "${Api.searchProductsUrl}/?id=$categoryId&q=$query";
+      print(url);
+      http.Response response =
+          await HttpRequest.get(Uri.parse(url), headers: headers);
+      dynamic data = jsonDecode(response.body);
+      print(data);
+      if (data["status"]) {
+        return productsFromJson(data['data']['rows']);
+      } else {
+        return [];
+      }
+    } catch (e, s) {
+      print(e);
+      print(s);
+      return [];
+    }
+  }
 }

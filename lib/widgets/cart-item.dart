@@ -64,7 +64,7 @@ class CartItem extends StatelessWidget {
                   children: [
                     Text(
                       (cart.hasOffer!)
-                          ? "Rs. ${(cart.productPrice)}" //- getDiscountPrice()).toStringAsFixed(2)}
+                          ? getDiscountPrice().toStringAsFixed(2)
                           : "Rs. ${(cart.productPrice!).toStringAsFixed(2)}",
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
@@ -226,5 +226,9 @@ class CartItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  double getDiscountPrice() {
+    return ((cart.discount! / 100) * cart.productPrice!);
   }
 }

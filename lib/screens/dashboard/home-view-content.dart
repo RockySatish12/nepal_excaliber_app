@@ -31,7 +31,7 @@ class HomeViewContent extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(
                       c.bannerImages[index],
-                      fit: BoxFit.cover,
+                      fit: BoxFit.scaleDown,
                     ),
                   );
                 },

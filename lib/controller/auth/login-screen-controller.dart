@@ -25,7 +25,7 @@ class LoginScreenController extends GetxController {
         email: emailTextController.text,
         password: passwordTextController.text,
         onSuccess: () {
-          Get.offAndToNamed(DashScreen.routeName);
+          Get.offAllNamed(DashScreen.routeName);
           CustomSnackBar.success(
               title: "Login Successful", message: "Logged in succesfully");
         },

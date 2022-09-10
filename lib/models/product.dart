@@ -38,14 +38,14 @@ class Product {
       this.category});
 
   Product.fromJson(Map<String, dynamic> jsonData) {
-    if (jsonData['sizes'] != null) {
+    if (jsonData['sizes'] != null && jsonData['sizes'] != "") {
       try {
         sizes = jsonData['sizes'];
       } catch (e) {
         sizes = json.decode(jsonData['sizes']);
       }
     }
-    if (jsonData['colors'] != null) {
+    if (jsonData['colors'] != null && jsonData['colors'] != "") {
       try {
         colors = jsonData['colors'];
       } catch (e) {

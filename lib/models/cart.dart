@@ -3,6 +3,9 @@ import 'package:get/get_rx/src/rx_types/rx_types.dart';
 List<Cart> cartsFromJson(List<dynamic> cartsJson) =>
     List<Cart>.from(cartsJson.map((cartJson) => Cart.fromJson(cartJson)));
 
+List<dynamic> cartsToJson(List<Cart> carts) =>
+    List<dynamic>.from(carts.map((e) => e.toJsonForApi()));
+
 class Cart {
   int? id;
   int? productId;
@@ -37,7 +40,7 @@ class Cart {
     quantity!.value = json['quantity'];
     imageUrl = json['image_url'];
     category = json['category'];
-    sizes = json['sizes'];
+    sizes = json['size'];
     color = json['color'];
     hasOffer = json['has_Offer'] == 1;
     discount = json['discount'];
@@ -52,10 +55,20 @@ class Cart {
     data['quantity'] = quantity!.value;
     data['image_url'] = imageUrl;
     data['category'] = category;
-    data['sizes'] = sizes;
+    data['size'] = sizes;
     data['color'] = color;
     data['has_Offer'] = hasOffer;
     data['discount'] = discount;
+    return data;
+  }
+
+  Map<String, dynamic> toJsonForApi() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['productId'] = productId;
+    data['quantity'] = quantity!.value;
+    data['size'] = sizes;
+    data['color'] = color;
+    data['price'] = productPrice;
     return data;
   }
 }

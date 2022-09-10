@@ -33,4 +33,18 @@ class ProductScreenController extends GetxController {
       }
     }
   }
+
+  searchProducts({required Category category, required String query}) async {
+    if (query.isEmpty) {
+      page = 1;
+      await loadCategoryProducts(category);
+      return;
+    }
+
+    loadingProducts.value = true;
+    products.clear();
+    products.addAll(await _productRepo.searchProducts(
+        categoryId: category.id.toString(), query: query));
+    loadingProducts.value = false;
+  }
 }

@@ -34,7 +34,7 @@ class DatabaseHelper {
     quantity INTEGER NOT NULL,
     image_url TEXT NOT NULL,
     category TEXT NOT NULL,
-    sizes TEXT,
+    size TEXT,
     color TEXT,
     has_Offer BOOLEAN NOT NULL,discount INTEGER)""");
     log("Tables created");
@@ -79,6 +79,11 @@ class DatabaseHelper {
 
   Future<bool> delete(int id) async {
     var result = await _db!.rawDelete("DELETE FROM $cart_table WHERE id = $id");
+    return result == 1;
+  }
+
+  Future<bool> clearCart() async {
+    var result = await _db!.delete(cart_table);
     return result == 1;
   }
 }

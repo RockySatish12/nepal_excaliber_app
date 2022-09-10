@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:nepal_excaliber/controller/common/delivery_controller.dart';
 import 'package:nepal_excaliber/controller/dashboard/cart-controller.dart';
 import 'package:nepal_excaliber/controller/dashboard/category-controller.dart';
 import 'package:nepal_excaliber/controller/core-controller.dart';
@@ -12,14 +13,19 @@ import 'package:nepal_excaliber/controller/common/products-screen-controller.dar
 import 'package:nepal_excaliber/controller/dashboard/profile_view_controller.dart';
 import 'package:nepal_excaliber/controller/auth/signup_controller.dart';
 import 'package:nepal_excaliber/controller/dashboard/wishlist-screen-controller.dart';
+import 'package:nepal_excaliber/controller/profile/address-form-controller.dart';
 import 'package:nepal_excaliber/controller/profile/change_password_controller.dart';
+import 'package:nepal_excaliber/controller/profile/order-controler.dart';
 import 'package:nepal_excaliber/controller/profile/saved_address_controller.dart';
 import 'package:nepal_excaliber/controller/profile/update_profile_controller.dart';
+import 'package:nepal_excaliber/screens/common/delivery_screen.dart';
 import 'package:nepal_excaliber/screens/dashboard/dash-screen.dart';
 import 'package:nepal_excaliber/screens/common/product-detail-screen.dart';
 import 'package:nepal_excaliber/screens/common/products-screen.dart';
 import 'package:nepal_excaliber/screens/auth/signup_screen.dart';
+import 'package:nepal_excaliber/screens/profile/address-form.dart';
 import 'package:nepal_excaliber/screens/profile/change_password_screen.dart';
+import 'package:nepal_excaliber/screens/profile/order-screen.dart';
 import 'package:nepal_excaliber/screens/profile/saved_address.dart';
 import 'package:nepal_excaliber/screens/profile/update_profile_screen.dart';
 
@@ -118,6 +124,33 @@ class MyApp extends StatelessWidget {
           binding: BindingsBuilder(
             (() => Get.lazyPut(
                   () => SavedAddressController(),
+                )),
+          ),
+        ),
+        GetPage(
+          name: AddressFormScreen.routeName,
+          page: () => AddressFormScreen(),
+          binding: BindingsBuilder(
+            (() => Get.lazyPut(
+                  () => AddressFormController(),
+                )),
+          ),
+        ),
+        GetPage(
+          name: DeliveryScreen.routeName,
+          page: () => DeliveryScreen(),
+          binding: BindingsBuilder(
+            (() => Get.lazyPut(
+                  () => DeliveryController(),
+                )),
+          ),
+        ),
+        GetPage(
+          name: OrderScreen.routeName,
+          page: () => OrderScreen(),
+          binding: BindingsBuilder(
+            (() => Get.lazyPut(
+                  () => OrderScreenControler(),
                 )),
           ),
         ),

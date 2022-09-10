@@ -53,7 +53,7 @@ class ProductScreen extends StatelessWidget {
                         textInputAction: TextInputAction.search,
                         hint: "Search",
                         onSubmit: (val) {
-                          CustomSnackBar.success();
+                          c.searchProducts(category: category, query: val);
                         },
                       ),
                     ),

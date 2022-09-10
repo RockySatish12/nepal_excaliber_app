@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nepal_excaliber/screens/profile/change_password_screen.dart';
+import 'package:nepal_excaliber/screens/profile/order-screen.dart';
 import 'package:nepal_excaliber/screens/profile/saved_address.dart';
 import 'package:nepal_excaliber/screens/profile/update_profile_screen.dart';
 import 'package:nepal_excaliber/widgets/profile_tile.dart';
@@ -59,7 +60,9 @@ class ProfileView extends StatelessWidget {
                 iconData: Icons.lock_open_outlined,
                 title: "Change Password"),
             ProfileTileWidget(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(OrderScreen.routeName);
+              },
               iconData: Icons.gif_box_outlined,
               title: "Orders",
             ),
