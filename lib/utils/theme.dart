@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'colors.dart';
 
 ThemeData basicTheme() {
-  TextTheme _basicTextTheme() {
+  TextTheme basicTextTheme() {
     return ThemeData.light()
         .textTheme
         .copyWith(
@@ -39,15 +39,14 @@ ThemeData basicTheme() {
   }
 
   return ThemeData.light().copyWith(
-      textTheme: _basicTextTheme(),
-      colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: AppColors.primaryColor,
-          secondary: AppColors.secondaryColor,
-          tertiary: AppColors.tertiaryColor,
-          outline: AppColors.borderColor,
-          onError: AppColors.errorColor),
-      scaffoldBackgroundColor: AppColors.backGroundColor,
-      hintColor: AppColors.hintTextColor,
-      errorColor: AppColors.errorColor,
-      backgroundColor: AppColors.backGroundColor);
+    textTheme: basicTextTheme(),
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: AppColors.primaryColor,
+        secondary: AppColors.secondaryColor,
+        tertiary: AppColors.tertiaryColor,
+        outline: AppColors.borderColor,
+        onError: AppColors.errorColor),
+    scaffoldBackgroundColor: AppColors.backGroundColor,
+    hintColor: AppColors.hintTextColor,
+  );
 }

@@ -71,4 +71,8 @@ class Cart {
     data['price'] = productPrice;
     return data;
   }
+
+  void save() async{
+    //TODO
+  }
 }

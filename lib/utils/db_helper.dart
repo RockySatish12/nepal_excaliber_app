@@ -52,7 +52,7 @@ class DatabaseHelper {
       return null;
     }
   }
-
+  
   Future<void> saveToCart(Cart cart) async {
     log("saving");
     var result = await _db!.insert(cart_table, cart.toJson());

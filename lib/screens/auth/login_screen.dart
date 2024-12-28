@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         Text(
                           "Login Now",
-                          style: theme.textTheme.headline3,
+                          style: theme.textTheme.headlineLarge,
                         ),
                         const SizedBox(
                           height: 8,

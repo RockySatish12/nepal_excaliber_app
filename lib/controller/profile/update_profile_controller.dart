@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nepal_excaliber/repo/profile_repo.dart';
@@ -58,17 +57,17 @@ class UpdateProfileController extends GetxController {
   }
 
   void pickDate() async {
-    DatePicker.showDatePicker(
-      Get.context!,
-      showTitleActions: true,
-      maxTime: DateTime.now(),
-      onChanged: (date) {},
-      onConfirm: (date) {
-        dobController.text = date.toString().split(" ")[0];
-      },
-      currentTime: DateTime.now(),
-      locale: LocaleType.en,
-    );
+    // DatePicker.showDatePicker(
+    //   Get.context!,
+    //   showTitleActions: true,
+    //   maxTime: DateTime.now(),
+    //   onChanged: (date) {},
+    //   onConfirm: (date) {
+    //     dobController.text = date.toString().split(" ")[0];
+    //   },
+    //   currentTime: DateTime.now(),
+    //   locale: LocaleType.en,
+    // );
   }
 
   void submit() async {

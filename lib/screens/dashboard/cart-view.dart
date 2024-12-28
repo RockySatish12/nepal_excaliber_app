@@ -47,7 +47,7 @@ class CartView extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      primary: AppColors.tertiaryColor,
+                      backgroundColor: AppColors.tertiaryColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4)),
                       minimumSize: const Size.fromHeight(30)),

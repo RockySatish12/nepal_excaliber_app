@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nepal_excaliber/controller/dashboard/home-view-controller.dart';
@@ -24,27 +24,27 @@ class HomeViewContent extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              CarouselSlider.builder(
-                itemCount: c.bannerImages.length,
-                itemBuilder: (BuildContext context, int index, int pageIndex) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      c.bannerImages[index],
-                      fit: BoxFit.scaleDown,
-                    ),
-                  );
-                },
-                options: CarouselOptions(
-                  height: 200,
-                  initialPage: 0,
-                  reverse: true,
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  scrollDirection: Axis.horizontal,
-                  enlargeCenterPage: true,
-                  aspectRatio: 16 / 9,
-                ),
-              ),
+              // CarouselSlider.builder(
+              //   itemCount: c.bannerImages.length,
+              //   itemBuilder: (BuildContext context, int index, int pageIndex) {
+              //     return ClipRRect(
+              //       borderRadius: BorderRadius.circular(12),
+              //       child: Image.network(
+              //         c.bannerImages[index],
+              //         fit: BoxFit.scaleDown,
+              //       ),
+              //     );
+              //   },
+              //   options: CarouselOptions(
+              //     height: 200,
+              //     initialPage: 0,
+              //     reverse: true,
+              //     autoPlayCurve: Curves.fastOutSlowIn,
+              //     scrollDirection: Axis.horizontal,
+              //     enlargeCenterPage: true,
+              //     aspectRatio: 16 / 9,
+              //   ),
+              // ),
               const SizedBox(
                 height: 24,
               ),

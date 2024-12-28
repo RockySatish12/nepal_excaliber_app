@@ -57,7 +57,7 @@ class AddressRepo {
       } else {
         onError(data['message']);
       }
-    } catch (e, s) {
+    } catch (e) {
       onError("Something went wrong !!!!");
     }
   }

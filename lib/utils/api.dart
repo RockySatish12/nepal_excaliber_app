@@ -1,6 +1,6 @@
 class Api {
   // static const String baseUrl = "http://192.168.1.75:3000/api/v1";
-  static const String baseUrl = "https://nepal-excaliber.herokuapp.com/api/v1";
+  static const String baseUrl = "https://nepal-excaliber.onrender.com/api/v1";
   static const String loginUrl = "$baseUrl/user/login";
   static const String signupUrl = "$baseUrl/user/signup";
   static const String latestProductsUrl = "$baseUrl/products/latest";
